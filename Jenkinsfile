@@ -36,7 +36,8 @@ pipeline {
                   image 'node:lts-buster-slim'
               }
             }
-            script {
+            steps {
+                script {
                     // Check if the test script exists before running it
                     def scriptExists = sh(script: 'npm run', returnStatus: true) == 0
                     if (scriptExists) {
@@ -44,7 +45,9 @@ pipeline {
                     } else {
                         echo "No test script found. Skipping test execution."
                     }
-                }
+                }   
+            }
+            
         }
         stage('SCA Trivy Scan Dockerfile Misconfiguration') {
             agent {
