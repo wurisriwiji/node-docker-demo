@@ -2,7 +2,9 @@
   "name": "node-docker",
   "version": "0.0.0",
   "private": true,
-  "scripts": {},
+  "scripts": {
+    "test": "jest"
+  },
   "dependencies": {
     "body-parser": "~1.18.2",
     "cookie-parser": "~1.4.3",
@@ -14,6 +16,7 @@
     "pg": "^6.4.2",
     "pg-hstore": "^2.3.2",
     "sequelize": "~4.28.6",
-    "serve-favicon": "~2.4.5"
+    "serve-favicon": "~2.4.5",
+    "jest": "^27.2.0"
   }
 }
