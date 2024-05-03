@@ -37,17 +37,8 @@ pipeline {
               }
             }
             steps {
-                script {
-                    // Check if the test script exists before running it
-                    def scriptExists = sh(script: 'npm run', returnStatus: true) == 0
-                    if (scriptExists) {
-                        sh 'npm run test'
-                    } else {
-                        echo "No test script found. Skipping test execution."
-                    }
-                }   
+                sh 'npm run test'
             }
-            
         }
         stage('SCA Trivy Scan Dockerfile Misconfiguration') {
             agent {
